@@ -4,12 +4,12 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon server.js --watch server.js lib"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "applicationinsights": "^0.18.0",
     "botframework-directlinejs": "^0.7.1",
     "nconf": "^0.8.4",
     "restify": "^4.3.0",
@@ -17,5 +17,8 @@
   },
   "files": [
     "server.js"
-  ]
+  ],
+  "devDependencies": {
+    "nodemon": "^1.11.0"
+  }
 }

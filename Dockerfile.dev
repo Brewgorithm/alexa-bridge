@@ -1,0 +1,17 @@
+FROM node:8-alpine
+MAINTAINER Patrick Scott <pat@patscott.io>
+
+ENV NODE_ENV=development
+ENV HOME=/home/
+ENV port=4000
+EXPOSE $port
+
+COPY package.json $HOME/service/
+COPY package-lock.json $HOME/service/
+
+WORKDIR $HOME/service/
+
+RUN npm i
+
+CMD ["npm", "run", "dev"]
+HEALTHCHECK CMD curl --fail http://localhost:$port/ || exit 1

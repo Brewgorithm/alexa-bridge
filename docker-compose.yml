@@ -1,0 +1,16 @@
+version: '3.2'
+
+services:
+
+  alexa-bridge:
+    build: 
+      context: .
+      dockerfile: Dockerfile.dev
+    ports:
+      - 8080:8080
+    volumes:
+      - .:/home/service/
+      - /home/service/node_modules
+    environment:
+      - NODE_ENV=development
+      - port=8080
